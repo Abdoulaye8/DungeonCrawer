@@ -1,16 +1,20 @@
 package CampusN.DungeonCrawer;
 
-/** ici ce c'est les weapons */
-public class OffensiveEquipment {
-    private final String type; // "Weapon" or "Spell"
+/** Classe abstraite pour équipements offensifs */
+public abstract class OffensiveEquipment {
+    private final String type;
     private final String name;
     private final int attackLevel;
 
-    public OffensiveEquipment(String type, String name, int attackLevel) {
+    protected OffensiveEquipment(String type, String name, int attackLevel) {
         this.type = type;
         this.name = name;
         this.attackLevel = attackLevel;
     }
+
+    public String getType() { return type; }
+    public String getName() { return name; }
+    public int getAttackLevel() { return attackLevel; }
 
     @Override
     public String toString() {

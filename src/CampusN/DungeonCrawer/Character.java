@@ -7,7 +7,7 @@ public abstract class Character {
     private int life;
     private int attack;
     private OffensiveEquipment offensiveEquipment; // default weapon/spell
-
+    // ici le constructeur
     protected Character(String type, String name, int life, int attack, OffensiveEquipment eq) {
         this.type = type;
         this.name = name;
@@ -16,6 +16,7 @@ public abstract class Character {
         this.offensiveEquipment = eq;
     }
 
+    // là les getters et setters
     public String getType() { return type; }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }

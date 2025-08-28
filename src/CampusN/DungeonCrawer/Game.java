@@ -43,13 +43,21 @@ package CampusN.DungeonCrawer;
             while (playing) {
                 menu.pressEnterToRoll();
                 int roll = dice.roll();
-                int target = Math.min(position + roll, board.getSize());
-                menu.info(player.getName() + " rolls " + roll + " and moves from "
-                        + position + " to " + target + ".");
-                position = target;
+                int target = position + roll;
+                try {
+                    if (target > board.getSize()) {
+                        throw new PersonnageHorsPlateauException(" Position " + target + " dépasse le plateau !");
+                    }
+                    menu.info(player.getName() + " rolls " + roll + " and moves from "
+                            + position + " to " + target + ".");
+                    position = target;
+                } catch (PersonnageHorsPlateauException e) {
+                    menu.info(e.getMessage());
+                    position = board.getSize(); // Forcer la fin
+                }
                 menu.showProgress(position, board.getSize());
                 if (position >= board.getSize()) {
-                    menu.info(" waw tu es arrivé à la fin! You win.");
+                    menu.info(" welldone! tu es arrivé à la fin! You win.");
                     playing = false;
                     if (menu.askYesNo("Play again?")) {
                         position = 1;
@@ -57,5 +65,6 @@ package CampusN.DungeonCrawer;
                 }
             }
         }
+
     }
 
