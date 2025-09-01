@@ -1,4 +1,4 @@
-package CampusN.DungeonCrawer;
+package campusnum;
 
 public class PersonnageHorsPlateauException extends Exception {
     public PersonnageHorsPlateauException(String message) {

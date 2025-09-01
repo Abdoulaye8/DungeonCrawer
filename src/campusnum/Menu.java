@@ -1,4 +1,4 @@
-package CampusN.DungeonCrawer;
+package campusnum;
 
 import personnage.Character;
 import personnage.Warrior;

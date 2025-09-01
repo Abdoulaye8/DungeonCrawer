@@ -1,7 +1,7 @@
 package cell;
 
 import personnage.Character;
-import CampusN.DungeonCrawer.Menu;
+import campusnum.Menu;
 
 public abstract class Cell {
     private final int position;

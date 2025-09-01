@@ -1,6 +1,6 @@
 package game;
 
-import CampusN.DungeonCrawer.Menu;
+import campusnum.Menu;
 import cell.Cell;
 import personnage.Character;
 

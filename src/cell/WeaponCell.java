@@ -1,6 +1,6 @@
 package cell;
 
-import CampusN.DungeonCrawer.Menu;
+import campusnum.Menu;
 import attack.OffensiveEquipment;
 import personnage.Character;
 

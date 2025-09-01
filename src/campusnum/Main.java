@@ -1,4 +1,4 @@
-package CampusN.DungeonCrawer;
+package campusnum;
 
 import game.Game;
 

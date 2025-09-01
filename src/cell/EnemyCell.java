@@ -1,7 +1,7 @@
 package cell;
 
 import personnage.Character;
-import CampusN.DungeonCrawer.Menu;
+import campusnum.Menu;
 
 public class EnemyCell extends Cell {
     private final String enemyName;
