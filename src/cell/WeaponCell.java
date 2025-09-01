@@ -11,12 +11,14 @@ public class WeaponCell extends Cell {
         super(pos);
         this.weapon = weapon;
     }
+
     @Override
     public void interact(Character player, Menu menu){
         menu.info("Tu trouves une arme : " + weapon);
-        player.getOffensiveEquipment(weapon);
+        player.setOffensiveEquipment(weapon);
         menu.info(player.getName() + " s'équipe de " + weapon.getName() + ".");
     }
+
     @Override
     public String toString() {
         return "Arme (" + weapon + ")";

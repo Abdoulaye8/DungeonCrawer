@@ -1,5 +1,8 @@
 package game;
 
+import java.util.List;
+import java.util.ArrayList;
+
 import attack.Arme;
 import cell.WeaponCell;
 import cell.Cell;

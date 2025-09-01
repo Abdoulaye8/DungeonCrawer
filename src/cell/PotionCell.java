@@ -1,5 +1,8 @@
 package cell;
 
+import personnage.Character;
+import campusnum.Menu;
+
 public class PotionCell extends Cell {
     private final int healAmount;
 
