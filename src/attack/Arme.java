@@ -1,4 +1,4 @@
-package CampusN.DungeonCrawer;
+package attack;
 
 public class Arme extends OffensiveEquipment {
     public Arme(String name, int attackLevel) {

@@ -1,22 +1,27 @@
-package CampusN.DungeonCrawer;
+package personnage;
+
+import defense.DefensiveEquipment;
+import attack.OffensiveEquipment;
 
 /** Base character class (parent de Warrior/Wizard). */
 public abstract class Character {
-    private final String type; // "Warrior" or "Wizard"
+    private final String type; // "Warrior" ou "Wizard"
     private String name;
     private int life;
     private int attack;
-    private OffensiveEquipment offensiveEquipment; // default weapon/spell
-    // ici le constructeur
+    private OffensiveEquipment offensiveEquipment;
+    private DefensiveEquipment defensiveEquipment;
+
     protected Character(String type, String name, int life, int attack, OffensiveEquipment eq) {
         this.type = type;
         this.name = name;
         this.life = life;
         this.attack = attack;
         this.offensiveEquipment = eq;
+        this.defensiveEquipment = null;
     }
 
-    // là les getters et setters
+    // getters/setters
     public String getType() { return type; }
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
@@ -26,9 +31,12 @@ public abstract class Character {
     public void setAttack(int attack) { this.attack = attack; }
     public OffensiveEquipment getOffensiveEquipment() { return offensiveEquipment; }
     public void setOffensiveEquipment(OffensiveEquipment offensiveEquipment) { this.offensiveEquipment = offensiveEquipment; }
+    public DefensiveEquipment getDefensiveEquipment() { return defensiveEquipment; }
+    public void setDefensiveEquipment(DefensiveEquipment defensiveEquipment) { this.defensiveEquipment = defensiveEquipment; }
 
     @Override public String toString() {
         return type + " {name='" + name + "', life=" + life + ", attack=" + attack +
-                ", equipment=" + offensiveEquipment + "}";
+                ", equipment=" + offensiveEquipment +
+                (defensiveEquipment != null ? ", defense=" + defensiveEquipment : "") + "}";
     }
 }

@@ -1,4 +1,4 @@
-package CampusN.DungeonCrawer;
+package defense;
 
 public class Philtre extends DefensiveEquipment {
     public Philtre(String name, int defenseLevel) {

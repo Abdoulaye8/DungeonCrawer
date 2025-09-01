@@ -1,5 +1,9 @@
 package CampusN.DungeonCrawer;
 
+import personnage.Character;
+import personnage.Warrior;
+import personnage.Wizard;
+
 import java.util.Scanner;
 
 /** entrée et sortie du console. */

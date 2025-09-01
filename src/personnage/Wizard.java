@@ -1,4 +1,6 @@
-package CampusN.DungeonCrawer;
+package personnage;
+
+import attack.Sort;
 
 /** Wizard character with default stats and spell. */
 public class Wizard extends Character {

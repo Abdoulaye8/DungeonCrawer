@@ -1,4 +1,6 @@
-package CampusN.DungeonCrawer;
+package personnage;
+
+import attack.Arme;
 
 /** Warrior character with default stats and weapon. */
 public class Warrior extends Character {

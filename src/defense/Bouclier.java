@@ -1,4 +1,4 @@
-package CampusN.DungeonCrawer;
+package defense;
 
 public class Bouclier extends DefensiveEquipment {
     public Bouclier(String name, int defenseLevel) {

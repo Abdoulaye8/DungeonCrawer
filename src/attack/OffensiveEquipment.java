@@ -1,4 +1,4 @@
-package CampusN.DungeonCrawer;
+package attack;
 
 /** Classe abstraite pour équipements offensifs */
 public abstract class OffensiveEquipment {

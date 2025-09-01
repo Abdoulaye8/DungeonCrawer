@@ -1,4 +1,4 @@
-package CampusN.DungeonCrawer;
+package attack;
 
 public class Sort extends OffensiveEquipment {
     public Sort(String name, int attackLevel) {
