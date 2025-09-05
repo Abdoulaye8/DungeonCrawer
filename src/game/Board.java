@@ -15,7 +15,6 @@ public class Board {
 
     public Board() {
         cells = new ArrayList<>();
-        // Plateau simplifié (4 cases fixes)
         cells.add(new EmptyCell(1));
         cells.add(new EnemyCell(2, "Gobelin", 5));
         cells.add(new WeaponCell(3, new Arme("Hache", 4)));

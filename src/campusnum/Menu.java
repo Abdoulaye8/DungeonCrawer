@@ -6,11 +6,20 @@ import personnage.Wizard;
 
 import java.util.Scanner;
 
-/** entrée et sortie du console. */
+/**
+ * Classe responsable de la saisie et de l'affichage console.
+ * Elle Fournit un menu principal et des utilitaires de saisie réutilisables.
+ **/
 public class Menu {
+    /** Options du menu principal. */
     public enum Option { NEW_CHARACTER, SHOW_CHARACTER, EDIT_CHARACTER, START_GAME, QUIT }
 
     private final Scanner scanner = new Scanner(System.in);
+    /**
+     * Affiche le menu principal et lit le choix utilisateur.
+     * @param hasCharacter {@code true} si un personnage a déjà été créé
+     * @return l'option choisie
+     */
 
     public Option mainMenu(boolean hasCharacter) {
         System.out.println("\n===== DUNGEON CRAWLER =====");
@@ -29,6 +38,10 @@ public class Menu {
         };
     }
 
+    /**
+     * Crée un personnage (Warrior ou Wizard) via la console.
+     * @return instance de {@link personnage.Character}
+     */
     public Character createCharacter() {
         System.out.println("\n-- Create character --");
         int type = askIntInRange("Type (1=Warrior, 2=Wizard): ", 1, 2);
@@ -40,6 +53,11 @@ public class Menu {
         }
     }
 
+    /**
+     * Edite un personnage existant (actuellement supporte seulement le renommage).
+     * @param current personnage à éditer, peut être {@code null}
+     * @return le personnage modifié ou {@code null}
+     */
     public Character editCharacter(Character current) {
         if (current == null) {
             info("No character yet.");
@@ -56,6 +74,10 @@ public class Menu {
         return current;
     }
 
+    /**
+     * Affiche le personnage sur la console.
+     * @param c personnage à afficher (peut être {@code null})
+     */
     public void showCharacter(Character c) {
         if (c == null) {
             info("No character yet.");
@@ -64,16 +86,25 @@ public class Menu {
             System.out.println(c);
         }
     }
-
+    /**
+     * Affiche la progression sur le plateau.
+     * @param position position courante (1-based)
+     * @param size     taille du plateau
+     */
     public void showProgress(int position, int size) {
         System.out.println("Position: " + position + "/" + size);
     }
-
+    /** Invite l'utilisateur à appuyer sur ENTRÉE pour lancer le dé. */
     public void pressEnterToRoll() {
         System.out.print("Press ENTER to roll the dice...");
         scanner.nextLine();
     }
 
+    /**
+     * Pose une question oui/non et valide la réponse 'y' ou 'n'.
+     * @param label message affiché
+     * @return {@code true} si 'y', {@code false} si 'n'
+     */
     public boolean askYesNo(String label) {
         while (true) {
             System.out.print(label + " (y/n): ");
@@ -84,6 +115,13 @@ public class Menu {
         }
     }
 
+    /**
+     * Lit un entier compris dans un intervalle [min, max].
+     * @param label texte d'invite
+     * @param min   valeur minimale incluse
+     * @param max   valeur maximale incluse
+     * @return entier valide
+     */
     public int askIntInRange(String label, int min, int max) {
         while (true) {
             System.out.print(label);
@@ -96,6 +134,11 @@ public class Menu {
         }
     }
 
+    /**
+     * Lit une saisie non vide.
+     * @param label texte d'invite
+     * @return chaîne non vide
+     */
     public String askNonEmpty(String label) {
         while (true) {
             System.out.print(label);
@@ -105,10 +148,16 @@ public class Menu {
         }
     }
 
+
+    /**
+     * Affiche un message d'information.
+     * @param message texte à afficher
+     */
     public void info(String message) {
         System.out.println(message);
     }
 
+    /** Affiche un message de fin. */
     public void goodbye() {
         System.out.println("Goodbye!");
     }

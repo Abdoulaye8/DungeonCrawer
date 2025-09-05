@@ -1,6 +1,9 @@
 package attack;
 
-/** Classe abstraite pour équipements offensifs */
+/**
+ * Classe abstraite représentant un équipement offensif (par exemple une arme ou un sort).
+ * <p>Contient les informations communes (type, nom, niveau d'attaque) et les accesseurs.</p>
+ */
 public abstract class OffensiveEquipment {
     private final String type;
     private final String name;
